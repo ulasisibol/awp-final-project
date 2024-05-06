@@ -2,3 +2,19 @@
     border-radius: 20px 20px 20px 20px !important;
     margin: 40px;
 }
+.navbar-brand{
+    margin-left: 10%;
+}
+
+@media (min-width: 992px) {
+    .navbar-border{
+        height: 7%;
+    }
+    .big-screen-left{
+        margin-left: 55% !important;
+    }
+   
+}
+
+ 
+

@@ -1,20 +1,39 @@
-.navbar-border{
-    border-radius: 20px 20px 20px 20px !important;
-    margin: 40px;
+nav{
+    background-color: #282C33 !important;
+    font-size: 14px;
+}
+.primary{
+    color: #C778DD  !important;
+}
+.active{
+    color: white  !important;
+}
+.gray{
+  color: #ABB2BF !important ;  
+}
+
+.navbar-toggler-icon{
+    background-image: url("/assets/toggle.png");
+}
+.navbar-toggler{
+    border: none;
 }
 .navbar-brand{
-    margin-left: 10%;
+    font-size: medium;
+    img{
+        width: 21px;
+        height: 21px;
+    }
+    
 }
-
+.right{
+    margin-left: 3%;
+}
 @media (min-width: 992px) {
-    .navbar-border{
-        height: 7%;
+    .right{
+        margin-left: 40%;
     }
-    .big-screen-left{
-        margin-left: 55% !important;
+    .navbar-brand{
+        margin-left: 10%;
     }
-   
 }
-
- 
-

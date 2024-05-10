@@ -72,8 +72,6 @@ section {
     background-color: #c778dd2d;
 }
 
-@media (min-width: 992px) {}
-
 @media (max-width: 500px) {
     .home-page {
         margin-bottom: 10%;
@@ -122,6 +120,14 @@ section {
         margin-right: 1rem;
         justify-content: center !important;
 
+        .card-2 {
+            display: none;
+        }
+
+        .card-3 {
+            display: none;
+        }
+
         .card {
 
             .card-img-top {
@@ -142,8 +148,91 @@ section {
                 font-size: 0.9rem !important;
             }
         }
+
+        .skills-body {
+            .skills-boxes {
+                display: flex;
+                flex-wrap: wrap !important;
+            }
+
+            .card-group {
+                display: block !important;
+                padding-right: 20px;
+            }
+
+            .card {
+                width: 100% !important;
+            }
+
+            img {
+                display: none;
+
+            }
+
+
+        }
     }
 
+    .about-me {
+        text-align: justify;
+        display: block !important;
+
+        .about-me-text {
+            padding: 1rem !important;
+
+            a {
+                margin-left: 0% !important;
+                margin-bottom: 1rem !important;
+            }
+        }
+
+        .about-me-img {
+            justify-content: center;
+            display: flex;
+
+            img {
+                width: 150px !important;
+            }
+        }
+    }
+
+    .contact {
+        display: block !important;
+
+        .contact-text {
+            width: 100% !important;
+            color: rgb(221, 221, 221);
+            text-align: justify;
+        }
+
+        .contact-box-box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-box {
+            margin-top: 3rem;
+            padding: 2rem;
+            border: 1px solid #ABB2BF;
+
+            .contact-option {
+                margin-top: 2rem;
+                display: flex;
+                font-size: small;
+                align-items: center;
+
+                h4 {
+                    font-size: 1rem;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+
+}
+
+.card-group {
+    display: block;
 }
 
 @media (max-width: 990px) {
@@ -195,7 +284,7 @@ section {
         display: flex;
         align-items: center;
         margin-bottom: 3rem;
-
+        margin-top: 3rem;
 
         img {
             width: 30%;
@@ -208,6 +297,22 @@ section {
             text-decoration: none;
             color: white;
             font-size: large;
+        }
+    }
+
+    .skills-body {
+        display: flex;
+
+        .skills-boxes {
+            display: flex;
+        }
+
+        .card-title {
+            color: whitesmoke;
+        }
+
+        .skills-text {
+            color: rgb(221, 221, 221);
         }
     }
 }
@@ -275,6 +380,54 @@ section {
             max-height: 30px;
             min-width: 120px;
             background-color: #282C33;
+        }
+    }
+}
+
+.about-me {
+    display: flex;
+
+
+
+    .about-me-text {
+        padding-right: 15%;
+        font-size: medium;
+        color: rgb(221, 221, 221);
+
+        h5 {
+            margin-bottom: 3rem;
+        }
+
+        p {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+
+    .contact-text {
+        width: 50%;
+        color: rgb(221, 221, 221);
+    }
+
+    .contact-box {
+        float: right;
+        padding: 2rem;
+        border: 1px solid #ABB2BF;
+
+        .contact-option {
+            margin-top: 2rem;
+            display: flex;
+            font-size: small;
+            align-items: center;
+
+            h4 {
+                font-size: 1rem;
+                margin-top: auto;
+            }
         }
     }
 }

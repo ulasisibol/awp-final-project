@@ -1,0 +1,163 @@
+.primary {
+    color: #C778DD !important;
+}
+
+.active {
+    color: white !important;
+}
+
+.gray {
+    color: #ABB2BF !important;
+}
+
+section {
+    margin-top: 4%;
+    margin-bottom: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: white;
+
+    .header {
+        h1 {
+            margin-top: 15%;
+            font-size: x-large;
+        }
+
+        p {
+            font-size: medium;
+        }
+    }
+
+    .complate-apps {
+        margin-top: 4%;
+
+        h2 {
+            font-size: x-large;
+        }
+
+        .complate-projects {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 1rem;
+            margin-right: 1rem;
+
+            .card {
+                margin-right: 10px;
+                margin-top: 10px;
+                border-radius: 0;
+                background-color: #282C33;
+
+                .card-img-top {
+                    border: 0.5px solid gray;
+                    border-radius: 0;
+                    width: 100% !important;
+                }
+
+                .card-body {
+                    padding: 0 !important;
+                }
+
+                .title {
+                    border: 0.5px solid gray;
+                    border-radius: 0;
+                    padding: 0.4rem;
+
+                    h6 {
+                        color: gray;
+                    }
+
+                    h5 {
+                        color: white;
+                        font-size: large;
+                    }
+
+                    p {
+                        color: gray;
+                        font-size: small
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0.5rem;
+
+                    .live {
+                        border: 1px solid #C778DD;
+                    }
+
+                    .github {
+                        border: 1px solid gray;
+                    }
+
+                    .btn {
+                        font-size: small;
+                        max-height: 30px;
+                        min-width: 120px;
+                        background-color: #282C33;
+                    }
+                }
+            }
+        }
+    }
+
+    .d-flex {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        align-items: center;
+
+        img {
+            margin-left: 2%;
+            max-height: 3px;
+        }
+    }
+
+}
+
+@media (max-width: 500px) {
+    section {
+        margin-top: 4%;
+        margin-bottom: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+        color: white;
+
+        .header {
+            h1 {
+                margin-top: 25%;
+                font-size: x-large;
+            }
+        }
+
+
+
+        .complate-projects {
+            justify-content: center;
+            margin-left: 0.2rem;
+            margin-right: 0.2rem;
+
+            .card {
+                margin-top: 2rem;
+                margin-right: 0 !important;
+                width: 100% !important;
+            }
+        }
+
+        .d-flex {
+            margin-top: 15%;
+            margin-bottom: 5%;
+            align-items: center;
+
+            h2 {
+                font-size: medium;
+            }
+
+            img {
+                margin-left: 3%;
+                max-height: 4px;
+                max-width: 40%;
+            }
+        }
+    }
+
+}

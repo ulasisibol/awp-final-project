@@ -1,0 +1,228 @@
+.primary {
+    color: #C778DD !important;
+}
+
+.active {
+    color: white !important;
+}
+
+.gray {
+    color: #ABB2BF !important;
+}
+
+.header {
+    h1 {
+        margin-top: 15%;
+        font-size: x-large;
+    }
+
+    p {
+        font-size: medium;
+    }
+}
+
+section {
+    margin-top: 4%;
+    margin-bottom: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: white;
+}
+
+.about-me {
+    display: flex;
+
+    .about-me-text {
+        padding-top: 4%;
+
+        padding-right: 15%;
+        font-size: medium;
+        color: rgb(221, 221, 221);
+
+        h5 {
+            margin-bottom: 3rem;
+        }
+
+        p {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .about-me-img {
+        .about-me-image {
+            max-width: 15rem !important;
+        }
+    }
+}
+
+.section-interrupt {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    align-items: center;
+
+    img {
+        margin-left: 2%;
+        max-height: 3px;
+    }
+}
+
+.skills-body {
+    display: flex;
+
+    img {
+        max-width: 178px;
+        max-height: 169px;
+        margin: 5%;
+    }
+
+    .skills-boxes {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-title {
+        color: whitesmoke;
+    }
+
+    .skills-text {
+        color: rgb(221, 221, 221);
+    }
+}
+
+.skills-body {
+    display: flex;
+
+    .skills-boxes {
+        display: flex;
+    }
+
+    .card-title {
+        color: whitesmoke;
+    }
+
+    .skills-text {
+        color: rgb(221, 221, 221);
+    }
+}
+
+.card {
+    height: auto;
+    margin: 10px;
+    border-radius: 0;
+    background-color: #282C33;
+
+    .card-body {
+        padding: 0 !important;
+    }
+
+    .title {
+        border: 0.5px solid gray;
+        border-radius: 0;
+        padding: 0.4rem;
+
+        h6 {
+            color: gray;
+        }
+
+        p {
+            color: #ABB2BF;
+            font-size: small
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        margin-top: 4%;
+        margin-bottom: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+        color: white;
+
+        .header {
+            h1 {
+                margin-top: 25%;
+                font-size: x-large;
+            }
+        }
+
+        .about-me {
+            margin-top: 3rem;
+
+            .about-me-image {
+                display: none;
+            }
+
+            .about-me-text {
+                padding-top: 0%;
+                padding-right: 0%;
+                text-align: justify;
+            }
+        }
+
+        .skills-body {
+            .skills-boxes {
+                .card {
+                    width: 100% !important;
+                }
+            }
+
+            img {
+
+                display: none;
+            }
+        }
+
+        .section-interrupt {
+            img {
+                display: none;
+            }
+        }
+    }
+
+    .rectengle,
+    .rectengle-2,
+    .rectengle-3,
+    .rectengle-4,
+    .rectengle-5,
+    .rectengle-6 {
+        display: none;
+    }
+}
+
+.rectengle {
+    float: right;
+    margin-top: -1376px;
+
+}
+
+.rectengle-2 {
+    float: left;
+    margin-top: -1176px;
+
+
+}
+
+.rectengle-3 {
+    float: left;
+    margin-top: -700px;
+
+}
+
+.rectengle-4 {
+    float: right;
+    margin-top: -900px;
+
+}
+
+.rectengle-6 {
+    float: left;
+    margin-top: -400px;
+
+}
+
+.rectengle-5 {
+    float: right;
+    margin-top: -400px;
+
+}

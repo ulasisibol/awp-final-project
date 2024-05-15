@@ -87,8 +87,8 @@ section {
 
     .intermediate-section {
         text-align: center;
-        margin-left: 2% !important;
-        margin-right: 2% !important;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .second-section {
@@ -314,6 +314,11 @@ section {
         .skills-text {
             color: rgb(221, 221, 221);
         }
+
+        img {
+            height: fit-content;
+            margin: 10px;
+        }
     }
 }
 
@@ -364,7 +369,8 @@ section {
 
     .buttons {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
         padding: 0.5rem;
 
         .live {
@@ -377,9 +383,10 @@ section {
 
         .btn {
             font-size: small;
-            max-height: 30px;
             min-width: 120px;
             background-color: #282C33;
+            margin: 0.2rem;
+
         }
     }
 }
@@ -428,6 +435,179 @@ section {
                 font-size: 1rem;
                 margin-top: auto;
             }
+        }
+    }
+}
+
+
+@media (max-width: 850px) {
+    .home-page {
+        margin-bottom: 10%;
+
+        h1 {
+            padding-top: 30% !important;
+        }
+    }
+
+    .img {
+        margin-left: -10% !important;
+    }
+
+    .intermediate-section {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .second-section {
+        margin-top: 5%;
+        margin-left: 2% !important;
+        margin-right: 2% !important;
+
+        img {
+            width: 20% !important;
+        }
+
+        a {
+            margin-left: 10% !important;
+            font-size: 1rem !important;
+        }
+
+    }
+
+    .frame-r {
+        display: none !important;
+    }
+
+    .frame {
+        display: none !important;
+    }
+
+    .projects {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        justify-content: center !important;
+
+        .card-3 {
+            display: none;
+        }
+
+        .card {
+
+            .card-img-top {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .second-section {
+        margin-top: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
+
+        h2 {
+            font-size: 1.1rem !important;
+
+            a {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        .skills-body {
+            .skills-boxes {
+                display: flex;
+            }
+
+            .card-group {
+                display: block !important;
+                padding-right: 20px;
+            }
+
+            .card {
+                width: 100% !important;
+            }
+
+            img {
+                display: none;
+            }
+
+
+        }
+    }
+
+    .about-me {
+        text-align: justify;
+        display: block !important;
+
+        .about-me-text {
+            padding: 1rem !important;
+
+            a {
+                margin-left: 0% !important;
+                margin-bottom: 1rem !important;
+            }
+        }
+
+        .about-me-img {
+            justify-content: center;
+            display: flex;
+
+            img {
+                width: 250px !important;
+            }
+        }
+    }
+
+    .contact {
+        display: block !important;
+
+        .contact-text {
+            width: 100% !important;
+            color: rgb(221, 221, 221);
+            text-align: justify;
+        }
+
+        .contact-box-box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-box {
+            margin-top: 3rem;
+            padding: 2rem;
+            border: 1px solid #ABB2BF;
+
+            .contact-option {
+                margin-top: 2rem;
+                display: flex;
+                font-size: small;
+                align-items: center;
+
+                h4 {
+                    font-size: 1rem;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1176px) {
+    .skills-body {
+        justify-content: center;
+
+        img {
+            display: none;
+        }
+    }
+
+    .about-me {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        img {
+            max-width: 200px;
         }
     }
 }

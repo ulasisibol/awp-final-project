@@ -34,7 +34,6 @@ section {
 
 .about-me {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 
     .about-me-text {
@@ -72,17 +71,8 @@ section {
 }
 
 .skills-body {
-    display: flex;
-
-    img {
-        max-width: 178px;
-        max-height: 169px;
-        margin: 5%;
-    }
-
     .skills-boxes {
         display: flex;
-        flex-wrap: wrap;
     }
 
     .card-title {
@@ -94,8 +84,11 @@ section {
     }
 }
 
+.card-group {
+    display: block !important;
+}
+
 .skills-body {
-    display: flex;
 
     .skills-boxes {
         display: flex;
@@ -230,4 +223,14 @@ section {
     float: right;
     margin-top: -400px;
 
+}
+
+@media (max-width: 970px) {
+    .about-me {
+        flex-wrap: wrap;
+    }
+
+    .skills-boxes {
+        flex-wrap: wrap;
+    }
 }

@@ -98,7 +98,7 @@ section {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
     section {
         margin-top: 4%;
         margin-bottom: 2%;
@@ -134,5 +134,34 @@ section {
 
     .section-interrupt {
         margin-top: 15% !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    section {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contact-box-box {
+        margin-top: 10%;
+
+    }
+
+    .section-interrupt {
+
+        margin-top: 10%;
+        margin-bottom: 0%;
+        align-items: center;
+    }
+
+    .rectengle,
+    .b-rectengle {
+        display: none;
     }
 }

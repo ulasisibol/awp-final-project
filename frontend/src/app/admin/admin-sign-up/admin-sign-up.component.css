@@ -1,0 +1,32 @@
+.form-signin {
+    margin: 10rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 330px;
+    padding: 1rem;
+
+    .h3,
+    .form-check-label {
+        color: white;
+    }
+}
+
+.btn {
+    border: 1px solid gainsboro;
+    border-radius: 0;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

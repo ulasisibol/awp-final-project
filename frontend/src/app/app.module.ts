@@ -17,4 +17,5 @@ import { HomeComponent } from './main/home/home.component';
         HomeComponent // HomeComponent'i import ediyoruz
     ]
 })
-export class AppModule { }
+export class AppModule {
+}

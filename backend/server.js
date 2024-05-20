@@ -65,13 +65,22 @@ app.post("/api/update", async (req, res) => {
     }
 });
 
-app.post('/api/updateTitle1', (req, res) => {
-    console.log('UpdateTitle1 request body:', req.body); // Log the request body
-    homeTitle1 = req.body.title;
-    res.json({ message: 'Title updated successfully' });
+app.post('/api/updateTitle1', async (req, res) => {
+    try {
+        console.log('UpdateTitle1 request body:', req.body); // Log the request body
+        const admin = await Admin.findOneAndUpdate({}, { homeTitle1: req.body.title }, { new: true, upsert: true });
+        res.json({ message: 'Title updated successfully', admin });
+    } catch (err) {
+        res.status(500).send(err);
+    }
 });
 
 // Eksik olan GET endpoint'i ekleyelim
-app.get('/api/title', (req, res) => {
-    res.json({ title: homeTitle1 });
+app.get('/api/title', async (req, res) => {
+    try {
+        const admin = await Admin.findOne({});
+        res.json({ title: admin.homeTitle1 });
+    } catch (err) {
+        res.status(500).send(err);
+    }
 });

@@ -1,5 +1,4 @@
-import { Component, model } from '@angular/core';
-import { AdminPanel } from './models/admin.model';
+import { Component, OnInit, model } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -12,10 +11,15 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule, CommonModule] // FormsModule'u buraya ekleyin
 })
 
-export class AdminComponent {
+export class AdminComponent implements OnInit {
   homeTitle1: string = '';
+  originalTitle: string = '';
 
   constructor(private http: HttpClient) { }
+
+  ngOnInit() {
+    this.getTitle();
+  }
 
   onSubmit1() {
     console.log('Submitting update:', this.homeTitle1); // Log the title being submitted
@@ -33,6 +37,7 @@ export class AdminComponent {
   getTitle() {
     this.http.get<{ title: string }>('http://localhost:3000/api/title').subscribe((res) => {
       this.homeTitle1 = res.title;
+      this.originalTitle = res.title;
       console.log('Current title:', this.homeTitle1); // Log the current title
     });
   }

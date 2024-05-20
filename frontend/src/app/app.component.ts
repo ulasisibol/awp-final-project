@@ -14,7 +14,7 @@ import { filter } from 'rxjs/operators';
   imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, HttpClientModule]
 })
 export class AppComponent implements OnInit {
-  showNavbar = false;
+  showNavbar = true;
 
   constructor(private router: Router) { }
 

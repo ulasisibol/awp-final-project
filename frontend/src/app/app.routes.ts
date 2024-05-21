@@ -14,7 +14,7 @@ export const routes: Routes = [
     { path: 'about-me', component: AboutMeComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'admin', component: AdminComponent },
-    { path: 'signUp', component: AdminSignUpComponent },
+    { path: 'login', component: AdminSignUpComponent },
 
 ];
 

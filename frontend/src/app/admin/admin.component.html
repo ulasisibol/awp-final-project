@@ -174,12 +174,25 @@
                     <h2>HOME COMPONENT</h2>
                 </div>
                 <div class="mt-5">
-                    <form class="d-block input-field" (ngSubmit)="onSubmit1()">
+                    <form class="d-block input-field" (ngSubmit)="onSubmitTitle()">
                         <h2>Home Page</h2>
                         <div class="form-floating">
                             <input type="text" class="form-control" id="floatingInput" required placeholder="New Title"
-                                [(ngModel)]="homeTitle1" name="homeTitle">
-                            <label for="floatingInput">{{ originalTitle }}</label>
+                                [(ngModel)]="newTitle" name="homeTitle">
+                            <label for="floatingInput">{{ oldTitle }}</label>
+                        </div>
+                        <div class="d-flex justify-content-center button-field">
+                            <button class="btn btn-dark mt-3" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="mt-5">
+                    <form class="d-block input-field" (ngSubmit)="onSubmitNewWork()">
+                        <h2>Home Page</h2>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput2" required placeholder="New Title"
+                                [(ngModel)]="newWork" name="newWork">
+                            <label for="floatingInput2">{{ oldWork }}</label>
                         </div>
                         <div class="d-flex justify-content-center button-field">
                             <button class="btn btn-dark mt-3" type="submit">Update</button>

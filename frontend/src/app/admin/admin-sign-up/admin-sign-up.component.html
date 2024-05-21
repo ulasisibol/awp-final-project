@@ -1,26 +1,19 @@
 <div class="d-flex align-items-center py-4">
 
     <main class="form-signin w-100 m-auto">
-        <form>
-            <h1 class="h3 mb-3 fw-normal">Sign In</h1>
-
+        <form (ngSubmit)="onSubmit()">
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" required placeholder="name@example.com">
-                <label for="floatingInput">Username</label>
+                <input type="text" class="form-control" id="floatingInput" [(ngModel)]="username" name="username"
+                    required>
+                <label for="floatingInput">Admin</label>
             </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" required id="floatingPassword" placeholder="Password">
+            <div class="form-floating mt-3">
+                <input type="password" class="form-control" required id="floatingPassword" [(ngModel)]="password"
+                    name="password">
                 <label for="floatingPassword">Password</label>
             </div>
 
-            <div class="form-check text-start my-3">
-                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Remember me
-                </label>
-            </div>
             <button class="btn btn-dark w-100 py-2" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
         </form>
     </main>
     <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"

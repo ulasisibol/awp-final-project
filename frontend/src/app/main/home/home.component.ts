@@ -9,18 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  homeTitle: string = 'I\'m a <span class="primary">web designer</span> and <span class="primary">full-stack web developer</span>';
+  homeTitle: string = "";
+  newWork: string = "";
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getTitle();
+    this.getCurrentlyWork();
   }
 
   getTitle() {
     this.http.get<{ title: string }>('http://localhost:3000/api/title').subscribe((res) => {
       this.homeTitle = res.title;
-      console.log('Current title:', this.homeTitle); // Log the current title
+    });
+  }
+
+  getCurrentlyWork() {
+    this.http.get<{ title: string }>('http://localhost:3000/api/newWork').subscribe((res) => {
+      this.newWork = res.title;
     });
   }
 }

@@ -12,8 +12,11 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class AdminComponent implements OnInit {
-  homeTitle1: string = '';
-  originalTitle: string = '';
+  newTitle: string = '';
+  oldTitle: string = '';
+
+  newWork: string = "";
+  oldWork: string = "";
 
   constructor(private http: HttpClient) { }
 
@@ -21,9 +24,13 @@ export class AdminComponent implements OnInit {
     this.getTitle();
   }
 
-  onSubmit1() {
-    console.log('Submitting update:', this.homeTitle1); // Log the title being submitted
-    this.http.post<any>('http://localhost:3000/api/updateTitle1', { title: this.homeTitle1 }).subscribe(
+
+
+  // title
+
+  onSubmitTitle() {
+    console.log('Submitting update:', this.newTitle); // Log the title being submitted
+    this.http.post<any>('http://localhost:3000/api/updateTitle1', { title: this.newTitle }).subscribe(
       (res) => {
         console.log('Update response:', res); // Log the response
         this.getTitle(); // Refresh the title after update
@@ -36,9 +43,31 @@ export class AdminComponent implements OnInit {
 
   getTitle() {
     this.http.get<{ title: string }>('http://localhost:3000/api/title').subscribe((res) => {
-      this.homeTitle1 = res.title;
-      this.originalTitle = res.title;
-      console.log('Current title:', this.homeTitle1); // Log the current title
+      this.newTitle = res.title;
+      this.oldTitle = res.title;
     });
   }
+
+  // currentlyWork
+
+  onSubmitNewWork() {
+    console.log('Submitting update:', this.newWork); // Log the title being submitted
+    this.http.post<any>('http://localhost:3000/api/updateNewWork', { title: this.newWork }).subscribe(
+      (res) => {
+        this.getWork(); // Refresh the title after update
+      },
+      (error) => {
+        console.error('Update error:', error); // Log any error
+      }
+    );
+  }
+
+  getWork() {
+    this.http.get<{ title: string }>('http://localhost:3000/api/newWork').subscribe((res) => {
+      this.newWork = res.title;
+      this.oldWork = res.title;
+    });
+  }
+
+
 }

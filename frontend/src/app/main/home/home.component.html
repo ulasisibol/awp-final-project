@@ -1,8 +1,8 @@
 <section class="first-section">
   <div class="home-page">
     <div>
-      <h1 [innerText]="homeTitle">I’m a <span class="primary">web designer</span> and <span class="primary">full-stack
-          developer</span></h1>
+      <h1>I’m a <span class="primary">web designer</span> and <span class="primary">full-stack</span> web
+        developer</h1>
       <p class="gray mt-3">He crafts responsive websites where technologies meet creativity</p>
       <br>
       <a href="" class="btn ">Contact me!!</a>
@@ -11,7 +11,7 @@
     <div class="img">
       <img src="/assets/home.png" class="img-fluid" alt="">
       <div class="currently-part">
-        <span class="cube"></span><a class="" href="#">Currently working on PORTFOLIO</a>
+        <span class="cube"></span><a class="" href="#">Currently working on <span [innerText]="newWork"></span></a>
       </div>
     </div>
   </div>

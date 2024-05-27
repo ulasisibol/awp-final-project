@@ -22,44 +22,6 @@ mongoose.connect(uri)
     .catch(err => console.error('MongoDB connection error:', err));
 
 
-// Kullanıcı girişi
-app.post('/api/login', async (req, res) => {
-    try {
-        const { username, password } = req.body;
-        const user = await User.findOne({ username });
-        if (user && await bcrypt.compare(password, user.password)) {
-            const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
-            res.json({ token });
-        } else {
-            res.status(401).json({ message: 'Invalid username or password' });
-        }
-    } catch (err) {
-        res.status(500).json({ message: 'Error logging in', error: err });
-    }
-});
-
-// JWT doğrulama middleware'i
-const authenticateJWT = (req, res, next) => {
-    const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
-    if (token) {
-        jwt.verify(token, 'your_jwt_secret', (err, user) => {
-            if (err) {
-                return res.sendStatus(403);
-            }
-            req.user = user;
-            next();
-        });
-    } else {
-        res.sendStatus(401);
-    }
-};
-
-// Korumalı endpoint
-app.get('/api/protected', authenticateJWT, (req, res) => {
-    res.json({ message: 'This is a protected endpoint', user: req.user });
-});
-
-
 // title
 app.post('/api/updateTitle1', async (req, res) => {
     try {

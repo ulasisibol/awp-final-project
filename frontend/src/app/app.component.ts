@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
       )
       .subscribe((event: NavigationEnd) => {
         this.showNavbar = !event.urlAfterRedirects.includes('/admin');
-        this.showNavbar = !event.urlAfterRedirects.includes('/login');
         console.log(`Current URL: ${event.urlAfterRedirects}, showNavbar: ${this.showNavbar}`);
       });
   }

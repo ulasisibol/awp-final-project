@@ -10,6 +10,18 @@
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
+
+
+}
+
+@media(max-width: 500px) {
+    .button-field-card {
+        display: block !important;
+
+        .btn {
+            width: 90%;
+        }
+    }
 }
 
 .b-example-divider {
@@ -168,3 +180,9 @@ h2 {
     border-radius: 0;
     border: 1px solid gainsboro;
 }
+
+.complate-apps {
+    display: block;
+}
+
+.container {}

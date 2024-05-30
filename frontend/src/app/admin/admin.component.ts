@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 
 export class AdminComponent implements OnInit {
   newTitle: string = '';
-  oldTitle: string = '';
 
   newWork: string = "";
   oldWork: string = "";
@@ -22,9 +21,10 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.getTitle();
+    this.getWork();
+
+
   }
-
-
 
   // title
 
@@ -32,7 +32,6 @@ export class AdminComponent implements OnInit {
     console.log('Submitting update:', this.newTitle); // Log the title being submitted
     this.http.post<any>('http://localhost:3000/api/updateTitle1', { title: this.newTitle }).subscribe(
       (res) => {
-        console.log('Update response:', res); // Log the response
         this.getTitle(); // Refresh the title after update
       },
       (error) => {
@@ -44,7 +43,6 @@ export class AdminComponent implements OnInit {
   getTitle() {
     this.http.get<{ title: string }>('http://localhost:3000/api/title').subscribe((res) => {
       this.newTitle = res.title;
-      this.oldTitle = res.title;
     });
   }
 

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  homeTitle: string = "";
+  homeParagraph: string = "";
   newWork: string = "";
 
   constructor(private http: HttpClient) { }
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   getTitle() {
     this.http.get<{ title: string }>('http://localhost:3000/api/title').subscribe((res) => {
-      this.homeTitle = res.title;
+      this.homeParagraph = res.title;
     });
   }
 

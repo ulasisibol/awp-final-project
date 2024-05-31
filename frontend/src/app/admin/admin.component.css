@@ -98,6 +98,11 @@
    */
 
 @media (min-width: 1250px) {
+    .admin-dashboard {
+        padding-right: 20%;
+        padding-left: 20%;
+    }
+
     .sidebar .offcanvas-lg {
         position: -webkit-sticky;
         position: sticky;
@@ -184,5 +189,3 @@ h2 {
 .complate-apps {
     display: block;
 }
-
-.container {}

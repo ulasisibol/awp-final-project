@@ -1,15 +1,17 @@
+<header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Ulas Isibol</a>
+</header>
 <div class="d-flex align-items-center py-4">
-
     <main class="form-signin w-100 m-auto">
         <form (ngSubmit)="onSubmit()">
             <div class="form-floating">
                 <input type="text" class="form-control" id="floatingInput" [(ngModel)]="username" name="username"
-                    required>
+                    required autocomplete="current-username">
                 <label for="floatingInput">Admin</label>
             </div>
             <div class="form-floating mt-3">
                 <input type="password" class="form-control" required id="floatingPassword" [(ngModel)]="password"
-                    name="password">
+                    name="password" autocomplete="current-password">
                 <label for="floatingPassword">Password</label>
             </div>
 

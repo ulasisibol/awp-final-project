@@ -1,5 +1,5 @@
 import { Component, OnInit, model } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',
-  imports: [FormsModule, CommonModule] // FormsModule'u buraya ekleyin
+  imports: [FormsModule, CommonModule, HttpClientModule] // FormsModule'u buraya ekleyin
 })
 
 export class AdminComponent implements OnInit {

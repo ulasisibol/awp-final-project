@@ -21,8 +21,6 @@ mongoose.connect(uri)
     })
     .catch(err => console.error('MongoDB connection error:', err));
 
-
-// title
 app.post('/api/updateTitle1', async (req, res) => {
     try {
         console.log('UpdateTitle1 request body:', req.body); // Log the request body
@@ -60,5 +58,18 @@ app.post('/api/updateNewWork', async (req, res) => {
         res.json({ message: 'Title updated successfully', admin });
     } catch (err) {
         res.status(500).send(err);
+    }
+});
+
+
+app.post('/api/login', async (req, res) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
+
+    if (user && await bcrypt.compare(password, user.password)) {
+        const token = jwt.sign({ userId: user._id }, 'admin', { expiresIn: '1h' });
+        res.json({ token });
+    } else {
+        res.status(401).send('Credentials are not valid');
     }
 });

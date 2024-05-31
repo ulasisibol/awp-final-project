@@ -25,7 +25,12 @@ export class AppComponent implements OnInit {
       )
       .subscribe((event: NavigationEnd) => {
         this.showNavbar = !event.urlAfterRedirects.includes('/admin');
-        console.log(`Current URL: ${event.urlAfterRedirects}, showNavbar: ${this.showNavbar}`);
+        if (event.urlAfterRedirects.includes('/admin') || event.urlAfterRedirects.includes('/login')) {
+          this.showNavbar = false
+        }
+        else {
+          this.showNavbar = true;
+        }
       });
   }
 }

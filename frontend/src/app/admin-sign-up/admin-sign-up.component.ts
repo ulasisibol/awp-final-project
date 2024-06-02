@@ -4,12 +4,13 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
+import { LoginGuard } from '../auth/login.control';
 
 @Component({
   selector: 'app-admin-sign-up',
   standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule], // HttpClientModule ekleyin
-  providers: [AuthService], // AuthService burada sağlanıyorx
+  imports: [FormsModule, CommonModule, HttpClientModule],
+  providers: [AuthService, LoginGuard],
   templateUrl: './admin-sign-up.component.html',
   styleUrls: ['./admin-sign-up.component.css']
 })

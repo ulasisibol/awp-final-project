@@ -10,7 +10,8 @@ import { SmallProject } from '../../admin/project/small.project.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './works.component.html',
-  styleUrl: './works.component.css'
+  styleUrl: './works.component.css',
+  providers: [ProjectService, SmallProjectService]
 })
 export class WorksComponent implements OnInit {
   projects: Project[] = [];

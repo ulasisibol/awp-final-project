@@ -75,8 +75,13 @@ section {
         display: flex;
     }
 
+    .card-text {
+        color: rgba(245, 245, 245, 0.847) !important;
+
+    }
+
     .card-title {
-        color: whitesmoke;
+        color: rgb(245, 245, 245) !important;
     }
 
     .skills-text {

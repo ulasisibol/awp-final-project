@@ -16,6 +16,7 @@ export class AuthService {
         );
     }
 
+
     logout() {
         localStorage.removeItem('token');  // Token'ı kaldır
     }
@@ -23,4 +24,4 @@ export class AuthService {
     getToken(): string {
         return localStorage.getItem('token') || '';
     }
-} 
+}  

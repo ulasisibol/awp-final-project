@@ -5,13 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { filter } from 'rxjs/operators';
+import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, HttpClientModule]
+  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, HttpClientModule, AdminSignUpComponent]
 })
 export class AppComponent implements OnInit {
   showNavbar = true;

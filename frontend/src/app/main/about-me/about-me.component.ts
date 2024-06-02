@@ -10,7 +10,8 @@ import { FunFact } from '../../admin/project/fun.facts.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.css'
+  styleUrl: './about-me.component.css',
+  providers: [SkillService, FunFactService]
 })
 export class AboutMeComponent implements OnInit {
   skills: Skill[] = [];

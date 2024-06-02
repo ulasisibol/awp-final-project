@@ -1,20 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './main/home/home.component';
+import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
+import { AboutMeComponent } from './main/about-me/about-me.component';
+import { WorksComponent } from './main/works/works.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { ContactComponent } from './main/contact/contact.component';
 
 @NgModule({
+    providers: [],
     imports: [
         BrowserModule,
         HttpClientModule,
         FormsModule,
-        AppComponent, // AppComponent'i import ediyoruz
-        AdminComponent, // AdminComponent'i import ediyoruz
-        HomeComponent // HomeComponent'i import ediyoruz
-    ]
+        AppComponent,
+        AdminComponent,
+        HomeComponent,
+        AdminSignUpComponent,
+        AboutMeComponent,
+        WorksComponent,
+        NavbarComponent,
+        FooterComponent,
+        ContactComponent,
+    ],
 })
 export class AppModule {
 }

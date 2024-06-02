@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../auth/auth.service';
-import { AuthGuard } from '../auth/auth.guard';
 import { Project } from './project/project.model';
 import { ProjectService } from './project/project.service';
 import { SmallProject } from './project/small.project.model';
@@ -12,6 +10,8 @@ import { SkillService } from './project/skill.service';
 import { Skill } from './project/skill.model';
 import { FunFactService } from './project/fun.facts.service';
 import { FunFact } from './project/fun.facts.model';
+import { AuthService } from '../auth/auth.service';
+import { AuthGuard } from '../auth/auth.guard';
 
 
 @Component({
@@ -20,7 +20,7 @@ import { FunFact } from './project/fun.facts.model';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
   imports: [FormsModule, CommonModule, HttpClientModule],
-  providers: [AuthService, AuthGuard],
+  providers: [SkillService, FunFactService, ProjectService, SmallProjectService],
 })
 export class AdminComponent implements OnInit {
   newTitle: string = '';
@@ -36,7 +36,12 @@ export class AdminComponent implements OnInit {
   funFacts: FunFact[] = [];
   selectedFact: FunFact = new FunFact();
 
-  constructor(private http: HttpClient, private projectService: ProjectService, private smallProjectService: SmallProjectService, private skillService: SkillService, private funFactService: FunFactService) { }
+  constructor(
+    private http: HttpClient,
+    private projectService: ProjectService,
+    private smallProjectService: SmallProjectService,
+    private skillService: SkillService,
+    private funFactService: FunFactService) { }
 
   ngOnInit() {
     this.getTitle();

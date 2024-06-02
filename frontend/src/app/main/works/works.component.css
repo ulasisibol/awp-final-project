@@ -39,16 +39,16 @@ section {
             font-size: x-large;
         }
 
-        .complate-projects {
+        .projects {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             margin-left: 1rem;
             margin-right: 1rem;
 
             .card {
-                margin-right: 10px;
-                margin-top: 10px;
+                margin-right: 20px;
+                margin-left: 50px;
+                margin-top: 20px;
                 width: 18rem;
                 border-radius: 0;
                 background-color: #282C33;

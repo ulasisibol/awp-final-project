@@ -2,12 +2,25 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 app.use(express.json());
 app.use(cors());
 
 const uri = "mongodb+srv://ulasisbl:ajJLII9hCaQjnX70@portfolio-app.o0vuf8i.mongodb.net/?retryWrites=true&w=majority&appName=portfolio-app";
-const Admin = require('./admin'); // Admin modelini içe aktarıyoruz
+
+const userSchema = new mongoose.Schema({
+    username: String,
+    password: String
+});
+
+const User = mongoose.model('User', userSchema);
+const Admin = require('./models/admin');
+const Project = require('./models/project');
+
+
 
 mongoose.set("strictQuery", false);
 mongoose.connect(uri)
@@ -62,14 +75,33 @@ app.post('/api/updateNewWork', async (req, res) => {
 });
 
 
-app.post('/api/login', async (req, res) => {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username });
+const hardcodedUser = {
+    username: "admin",
+    password: "admin" // Gerçek uygulamalarda daha güçlü bir şifre kullanılmalı
+};
 
-    if (user && await bcrypt.compare(password, user.password)) {
-        const token = jwt.sign({ userId: user._id }, 'admin', { expiresIn: '1h' });
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+    if (username === hardcodedUser.username && password === hardcodedUser.password) {
+        const token = jwt.sign({ userId: hardcodedUser.username }, 'your_secret_key', { expiresIn: '1h' });
         res.json({ token });
+        console.log('Login successful');
     } else {
         res.status(401).send('Credentials are not valid');
+        console.log('Login error');
     }
 });
+
+
+const projectRoutes = require('./routes/project');  // Projeler için router'ı dahil edin
+app.use('/api', projectRoutes);  // Endpoint'leri /api altında kullan
+
+const smallProjectRoutes = require('./routes/small.project'); // SmallProject routes dosyanızın yolu
+app.use('/api', smallProjectRoutes);  // Endpoint'leri /api altında kullan
+
+const SkillRouter = require('./routes/skill');
+app.use('/api/skills', SkillRouter);
+
+
+const funFactRouter = require('./routes/funfacts');
+app.use('/api/funfacts', funFactRouter);

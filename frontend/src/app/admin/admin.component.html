@@ -36,6 +36,7 @@
                     </div>
                 </div>
                 <hr style="color: aliceblue;" class="m-5">
+
                 <div class="m-5">
                     <div class="mt-5 justify-content-center d-flex">
                         <h1 style="color: white; font-size: x-large;">Complate Apps</h1>
@@ -48,170 +49,185 @@
                                 Complate Apps
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">New Project</a></li>
-                                <li><a class="dropdown-item" href="#">Project 1</a></li>
-                                <li><a class="dropdown-item" href="#">Project 2</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);" (click)="resetForm()">New
+                                        Project</a></li>
+                                <li *ngFor="let project of projects" (click)="selectProject(project)">
+                                    <a class="dropdown-item">{{ project.projectName }}</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="mt-5 d-bloc complate-apps">
-                        <form class="d-block" (ngSubmit)="onSubmitTitle()">
+                    <div class="mt-5 d-block complate-apps">
+                        <form class="d-block">
                             <h2 class="mt-2">Card Image Link</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedProject.imageLink" name="imageLink">
                             </div>
                             <h2 class="mt-2">Card Title</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedProject.cardTitle" name="cardTitle">
                             </div>
                             <h2 class="mt-2">Project Name</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedProject.projectName" name="projectName">
                             </div>
                             <h2 class="mt-2">Project Description</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedProject.description" name="description">
                             </div>
                             <h2 class="mt-2">Live Link</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" [(ngModel)]="selectedProject.liveLink"
+                                    name="liveLink">
                             </div>
                             <h2 class="mt-2">Github Link</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0"
+                                    [(ngModel)]="selectedProject.githubLink" name="githubLink">
                             </div>
                             <div class="d-flex justify-content-center button-field button-field-card ">
-                                <button class="btn btn-success m-3" type="submit">Add</button>
-                                <button class="btn btn-warning m-3" type="submit">Update</button>
-                                <button class="btn btn-danger m-3" type="submit">Delete</button>
+                                <button class="btn btn-success m-3" type="button" (click)="addProject()">Add</button>
+                                <button class="btn btn-warning m-3" type="button"
+                                    (click)="updateProject()">Update</button>
+                                <button class="btn btn-danger m-3" type="button"
+                                    (click)="deleteProject()">Delete</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <hr style="color: aliceblue;" class="m-5">
+                <!-- admin.component.html -->
+                <!-- admin.component.html -->
                 <div class="m-5">
                     <div class="mt-5 justify-content-center d-flex">
                         <h1 style="color: white; font-size: x-large;">Small Projects</h1>
                     </div>
                     <div class="container mt-3">
-                        <!-- Button trigger dropdown -->
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Small Projects
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">New Project</a></li>
-                                <li><a class="dropdown-item" href="#">Project 1</a></li>
-                                <li><a class="dropdown-item" href="#">Project 2</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);"
+                                        (click)="resetSmallProjectForm()">New Project</a></li>
+                                <li *ngFor="let project of smallProjects" (click)="selectSmallProject(project)">
+                                    <a class="dropdown-item" href="javascript:void(0)">{{ project.projectName }}</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="mt-5 d-bloc complate-apps">
-                        <form class="d-block" (ngSubmit)="onSubmitTitle()">
+                    <div class="mt-5 d-block complate-apps">
+                        <form class="d-block">
                             <h2 class="mt-2">Card Title</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedSmallProject.cardTitle" name="cardTitle">
                             </div>
                             <h2 class="mt-2">Project Name</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedSmallProject.projectName" name="projectName">
                             </div>
                             <h2 class="mt-2">Project Description</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedSmallProject.description" name="description">
                             </div>
                             <h2 class="mt-2">Github Link</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0"
+                                    [(ngModel)]="selectedSmallProject.githubLink" name="githubLink">
                             </div>
-                            <div class="d-flex justify-content-center button-field button-field-card ">
-                                <button class="btn btn-success m-3" type="submit">Add</button>
-                                <button class="btn btn-warning m-3" type="submit">Update</button>
-                                <button class="btn btn-danger m-3" type="submit">Delete</button>
+                            <div class="d-flex justify-content-center button-field button-field-card">
+                                <button class="btn btn-success m-3" type="button"
+                                    (click)="addSmallProject()">Add</button>
+                                <button class="btn btn-warning m-3" type="button"
+                                    (click)="updateSmallProject()">Update</button>
+                                <button class="btn btn-danger m-3" type="button"
+                                    (click)="deleteSmallProject()">Delete</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <hr style="color: aliceblue;" class="m-5">
+                <!-- skills.component.html -->
                 <div class="m-5">
                     <div class="mt-5 justify-content-center d-flex">
                         <h1 style="color: white; font-size: x-large;">Skills</h1>
                     </div>
                     <div class="container mt-3">
-                        <!-- Button trigger dropdown -->
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Skills
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">New Skills</a></li>
-                                <li><a class="dropdown-item" href="#">Skills 1</a></li>
-                                <li><a class="dropdown-item" href="#">Skills 2</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);" (click)="resetSkillForm()">New
+                                        Skills</a></li>
+                                <li *ngFor="let skill of skills" (click)="selectSkill(skill)">
+                                    <a class="dropdown-item" href="javascript:void(0)">{{ skill.title }}</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="mt-5 d-bloc complate-apps">
-                        <form class="d-block" (ngSubmit)="onSubmitTitle()">
+                    <div class="mt-5 d-block complate-apps">
+                        <form class="d-block" (ngSubmit)="submitSkillForm()">
                             <h2 class="mt-2">Skills Title</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedSkill.title" name="title">
                             </div>
                             <h2 class="mt-2">Skills Description</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedSkill.description" name="description">
                             </div>
-                            <div class="d-flex justify-content-center button-field button-field-card ">
-                                <button class="btn btn-success m-3" type="submit">Add</button>
-                                <button class="btn btn-warning m-3" type="submit">Update</button>
-                                <button class="btn btn-danger m-3" type="submit">Delete</button>
+                            <div class="d-flex justify-content-center button-field button-field-card">
+                                <button class="btn btn-success m-3" type="button" (click)="addSkill()">Add</button>
+                                <button class="btn btn-warning m-3" type="button"
+                                    (click)="updateSkill()">Update</button>
+                                <button class="btn btn-danger m-3" type="button" (click)="deleteSkill()">Delete</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <hr style="color: aliceblue;" class="m-5">
+                <!-- fun-facts.component.html -->
                 <div class="m-5">
                     <div class="mt-5 justify-content-center d-flex">
                         <h1 style="color: white; font-size: x-large;">Fun Facts</h1>
                     </div>
                     <div class="container mt-3">
-                        <!-- Button trigger dropdown -->
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Fun Facts
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">New Fun Facts</a></li>
-                                <li><a class="dropdown-item" href="#">Fun Facts 1</a></li>
-                                <li><a class="dropdown-item" href="#">Fun Facts 2</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);" (click)="resetForm2()">New Fun
+                                        Fact</a></li>
+                                <li *ngFor="let fact of funFacts" (click)="selectFact(fact)">
+                                    <a class="dropdown-item" href="javascript:void(0)">{{ fact.title }}</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="mt-5 d-bloc complate-apps">
-                        <form class="d-block" (ngSubmit)="onSubmitTitle()">
+                    <div class="mt-5 d-block complete-apps">
+                        <form class="d-block">
                             <h2 class="mt-2">Fun Fact</h2>
                             <div class="form-floating">
-                                <input type="text" class="form-control pt-0 pb-0" required [(ngModel)]="newTitle"
-                                    name="homeTitle">
+                                <input type="text" class="form-control pt-0 pb-0" required
+                                    [(ngModel)]="selectedFact.title" name="title">
                             </div>
-                            <div class="d-flex justify-content-center button-field button-field-card ">
-                                <button class="btn btn-success m-3" type="submit">Add</button>
-                                <button class="btn btn-warning m-3" type="submit">Update</button>
-                                <button class="btn btn-danger m-3" type="submit">Delete</button>
+                            <div class="d-flex justify-content-center button-field button-field-card">
+                                <button class="btn btn-success m-3" type="button" (click)="addFact()">Add</button>
+                                <button class="btn btn-warning m-3" type="button" (click)="updateFact()">Update</button>
+                                <button class="btn btn-danger m-3" type="button" (click)="deleteFact()">Delete</button>
                             </div>
                         </form>
                     </div>

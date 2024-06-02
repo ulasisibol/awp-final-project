@@ -7,89 +7,22 @@
         <div class="d-flex">
             <h2><span class="primary">#</span>complate-apps</h2><img src="assets/line-primary.png" alt="">
         </div>
-        <div class="complate-projects">
-            <div class="card">
-                <img src="/assets/project-image.jpg" class="card-img-top" alt="...">
+        <div class="projects">
+            <div class="card" style="width: 18rem;" *ngFor="let project of recentProjects">
+                <img [src]="project.imageLink || '/assets/project-image.jpg'" class="card-img-top" alt="Project Image">
                 <div class="card-body">
                     <div class="title">
-                        <h6 class="card-title">Card title</h6>
+                        <h6 class="card-title">{{ project.cardTitle }}</h6>
                     </div>
                     <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
+                        <h5>{{ project.projectName }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
                         <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-2">
-                <img src="/assets/project-image.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="title">
-                        <h6 class="card-title">Card title</h6>
-                    </div>
-                    <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-3">
-                <img src="/assets/project-image.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="title">
-                        <h6 class="card-title">Card title</h6>
-                    </div>
-                    <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
-                            <a href="#" class="btn btn-primary github">Github <~></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/assets/project-image.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="title">
-                        <h6 class="card-title">Card title</h6>
-                    </div>
-                    <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/assets/project-image.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="title">
-                        <h6 class="card-title">Card title</h6>
-                    </div>
-                    <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
+                            <a *ngIf="project.liveLink" href="{{ project.liveLink }}" class="btn btn-primary live">Live
+                                <~>
+                            </a>
+                            <a *ngIf="project.githubLink" href="{{ project.githubLink }}"
+                                class="btn btn-primary github">Github <~></a>
                         </div>
                     </div>
                 </div>
@@ -98,84 +31,19 @@
         <div class="d-flex">
             <h2><span class="primary">#</span>small-projects</h2><img src="assets/line-primary.png" alt="">
         </div>
-        <div class="complate-projects">
-            <div class="card">
+        <div class="projects">
+            <div *ngFor="let project of smallProjects" class="card">
                 <div class="card-body">
                     <div class="title">
-                        <h6 class="card-title">Card title</h6>
+                        <h6 class="card-title">{{ project.cardTitle }}</h6>
                     </div>
                     <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
+                        <h5>{{ project.projectName }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
                         <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-2">
-                <div class="card-body">
-                    <div class="title">
-                        <h6 class="card-title">Card title</h6>
-                    </div>
-                    <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-3">
-                <div class="card-body">
-                    <div class="title">
-                        <h6 class="card-title">Card title</h6>
-                    </div>
-                    <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
-                            <a href="#" class="btn btn-primary github">Github <~></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="title">
-                        <h6 class="card-title">Card title</h6>
-                    </div>
-                    <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="title">
-                        <h6 class="card-title">Card title</h6>
-                    </div>
-                    <div class="title">
-                        <h5>Project Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-primary live">Live <~></a>
+                            <!-- Conditional display of GitHub link if it exists -->
+                            <a *ngIf="project.githubLink" href="{{ project.githubLink }}"
+                                class="btn btn-secondary github" target="_blank">Github</a>
                         </div>
                     </div>
                 </div>

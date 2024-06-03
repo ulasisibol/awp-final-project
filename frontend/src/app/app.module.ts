@@ -13,7 +13,6 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ContactComponent } from './main/contact/contact.component';
 
 @NgModule({
-    providers: [],
     imports: [
         BrowserModule,
         HttpClientModule,

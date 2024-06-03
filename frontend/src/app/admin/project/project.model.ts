@@ -1,4 +1,3 @@
-// src/app/project.model.ts
 export class Project {
     _id?: string;
     imageLink: string;
@@ -7,8 +6,8 @@ export class Project {
     description: string;
     liveLink?: string;
     githubLink?: string;
-    createdAt?: Date;  // Modelinize createdAt ekleyin
-    updatedAt?: Date;  // Modelinize updatedAt ekleyin
+    createdAt?: Date;
+    updatedAt?: Date;
 
     constructor(
         imageLink: string = '',
@@ -17,7 +16,7 @@ export class Project {
         description: string = '',
         liveLink: string = '',
         githubLink: string = '',
-        createdAt: Date = new Date(),  // Varsayılan değer olarak şimdiki zaman
+        createdAt: Date = new Date(),
         updatedAt: Date = new Date()
     ) {
         this.imageLink = imageLink;

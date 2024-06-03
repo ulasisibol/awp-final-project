@@ -41,7 +41,8 @@ export class AdminComponent implements OnInit {
     private projectService: ProjectService,
     private smallProjectService: SmallProjectService,
     private skillService: SkillService,
-    private funFactService: FunFactService) { }
+    private funFactService: FunFactService,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.getTitle();
@@ -55,13 +56,13 @@ export class AdminComponent implements OnInit {
   // title
 
   onSubmitTitle() {
-    console.log('Submitting update:', this.newTitle); // Log the title being submitted
+    console.log('Submitting update:', this.newTitle);
     this.http.post<any>('http://localhost:3000/api/updateTitle1', { title: this.newTitle }).subscribe(
       (res) => {
-        this.getTitle(); // Refresh the title after update
+        this.getTitle();
       },
       (error) => {
-        console.error('Update error:', error); // Log any error
+        console.error('Update error:', error);
       }
     );
   }
@@ -75,13 +76,13 @@ export class AdminComponent implements OnInit {
   // currentlyWork
 
   onSubmitNewWork() {
-    console.log('Submitting update:', this.newWork); // Log the title being submitted
+    console.log('Submitting update:', this.newWork);
     this.http.post<any>('http://localhost:3000/api/updateNewWork', { title: this.newWork }).subscribe(
       (res) => {
-        this.getWork(); // Refresh the title after update
+        this.getWork();
       },
       (error) => {
-        console.error('Update error:', error); // Log any error
+        console.error('Update error:', error);
       }
     );
   }
@@ -102,7 +103,7 @@ export class AdminComponent implements OnInit {
   }
 
   resetForm() {
-    this.selectedProject = new Project(); // Formu temizle ve yeni proje modeli ata
+    this.selectedProject = new Project();
   }
 
   selectProject(project: Project) {
@@ -112,7 +113,7 @@ export class AdminComponent implements OnInit {
   addProject() {
     this.projectService.addProject(this.selectedProject).subscribe(() => {
       this.loadProjects();
-      this.selectedProject = new Project(); // Formu temizle
+      this.selectedProject = new Project();
     });
   }
 
@@ -128,7 +129,7 @@ export class AdminComponent implements OnInit {
     if (this.selectedProject._id) {
       this.projectService.deleteProject(this.selectedProject._id).subscribe(() => {
         this.loadProjects();
-        this.selectedProject = new Project(); // Formu temizle
+        this.selectedProject = new Project();
       });
     }
   }
@@ -275,7 +276,6 @@ export class AdminComponent implements OnInit {
       });
     }
   }
-
 
 
 }

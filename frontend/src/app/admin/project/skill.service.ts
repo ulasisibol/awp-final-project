@@ -7,7 +7,7 @@ import { Skill } from './skill.model';
     providedIn: 'root'
 })
 export class SkillService {
-    private apiUrl = 'http://localhost:3000/api/skills';  // API URL'inizi buraya yazın
+    private apiUrl = 'http://localhost:3000/api/skills';
 
     constructor(private http: HttpClient) { }
 

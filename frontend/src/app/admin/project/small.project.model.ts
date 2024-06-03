@@ -1,4 +1,3 @@
-// small-project.model.ts
 export class SmallProject {
     _id?: string;
     cardTitle: string;

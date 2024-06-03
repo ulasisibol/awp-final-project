@@ -17,16 +17,22 @@ import { LoginGuard } from '../auth/login.control';
 export class AdminSignUpComponent {
   username: string = "";
   password: string = "";
+  errorMessage: string = "";
+  successMessage: string = "";
 
   constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit() {
     this.authService.login(this.username, this.password).subscribe({
       next: (response) => {
+        this.successMessage = 'Login successful';
+        this.errorMessage = '';
         console.log('Login successful', response);
         this.router.navigate(['/admin']);
       },
       error: (error) => {
+        this.errorMessage = 'Incorrect username or password';
+        this.successMessage = '';
         console.error('Login failed', error);
       }
     });

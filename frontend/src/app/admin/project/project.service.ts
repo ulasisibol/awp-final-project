@@ -1,4 +1,3 @@
-// src/app/project.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,7 +7,7 @@ import { Project } from './project.model';
     providedIn: 'root'
 })
 export class ProjectService {
-    private apiUrl = 'http://localhost:3000/api/projects';  // API URL'inizi doğru adresle değiştirin
+    private apiUrl = 'http://localhost:3000/api/projects';
 
     constructor(private http: HttpClient) { }
 

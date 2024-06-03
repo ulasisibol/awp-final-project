@@ -1,4 +1,3 @@
-// small-project.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,7 +7,7 @@ import { SmallProject } from './small.project.model';
     providedIn: 'root'
 })
 export class SmallProjectService {
-    private apiUrl = 'http://localhost:3000/api/smallProjects'; // Adjust as needed
+    private apiUrl = 'http://localhost:3000/api/smallProjects';
 
     constructor(private http: HttpClient) { }
 

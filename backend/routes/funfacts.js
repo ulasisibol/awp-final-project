@@ -1,4 +1,3 @@
-// routes/funFacts.js
 const express = require('express');
 const router = express.Router();
 const FunFact = require('../models/funfacts');

@@ -1,7 +1,6 @@
 <div>
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Ulas Isibol</a>
-        <button class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white">Logout</button>
     </header>
 
     <div class="container-fluid">
@@ -58,46 +57,64 @@
                         </div>
                     </div>
                     <div class="mt-5 d-block complate-apps">
-                        <form class="d-block">
+                        <form #projectForm="ngForm" class="d-block">
                             <h2 class="mt-2">Card Image Link</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedProject.imageLink" name="imageLink">
+                                    [(ngModel)]="selectedProject.imageLink" name="imageLink" #imageLink="ngModel">
+                                <div *ngIf="imageLink.invalid && (imageLink.dirty || imageLink.touched)"
+                                    class="invalid-feedback">
+                                    Image link is required.
+                                </div>
                             </div>
                             <h2 class="mt-2">Card Title</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedProject.cardTitle" name="cardTitle">
+                                    [(ngModel)]="selectedProject.cardTitle" name="cardTitle" #cardTitle="ngModel">
+                                <div *ngIf="cardTitle.invalid && (cardTitle.dirty || cardTitle.touched)"
+                                    class="invalid-feedback">
+                                    Card title is required.
+                                </div>
                             </div>
                             <h2 class="mt-2">Project Name</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedProject.projectName" name="projectName">
+                                    [(ngModel)]="selectedProject.projectName" name="projectName" #projectName="ngModel">
+                                <div *ngIf="projectName.invalid && (projectName.dirty || projectName.touched)"
+                                    class="invalid-feedback">
+                                    Project name is required.
+                                </div>
                             </div>
                             <h2 class="mt-2">Project Description</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedProject.description" name="description">
+                                    [(ngModel)]="selectedProject.description" name="description" #description="ngModel">
+                                <div *ngIf="description.invalid && (description.dirty || description.touched)"
+                                    class="invalid-feedback">
+                                    Project description is required.
+                                </div>
                             </div>
                             <h2 class="mt-2">Live Link</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" [(ngModel)]="selectedProject.liveLink"
-                                    name="liveLink">
+                                    name="liveLink" #liveLink="ngModel">
                             </div>
                             <h2 class="mt-2">Github Link</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0"
-                                    [(ngModel)]="selectedProject.githubLink" name="githubLink">
+                                    [(ngModel)]="selectedProject.githubLink" name="githubLink" #githubLink="ngModel">
                             </div>
                             <div class="d-flex justify-content-center button-field button-field-card ">
-                                <button class="btn btn-success m-3" type="button" (click)="addProject()">Add</button>
-                                <button class="btn btn-warning m-3" type="button"
-                                    (click)="updateProject()">Update</button>
-                                <button class="btn btn-danger m-3" type="button"
-                                    (click)="deleteProject()">Delete</button>
+                                <button class="btn btn-success m-3" type="button" (click)="addProject()"
+                                    [disabled]="projectForm.invalid">Add</button>
+                                <button class="btn btn-warning m-3" type="button" (click)="updateProject()"
+                                    [disabled]="projectForm.invalid">Update</button>
+                                <button class="btn btn-danger m-3" type="button" (click)="deleteProject()"
+                                    [disabled]="projectForm.invalid">Delete</button>
                             </div>
                         </form>
                     </div>
+
                 </div>
                 <hr style="color: aliceblue;" class="m-5">
                 <div class="m-5">
@@ -120,38 +137,54 @@
                         </div>
                     </div>
                     <div class="mt-5 d-block complate-apps">
-                        <form class="d-block">
+                        <form #smallProjectForm="ngForm" class="d-block">
                             <h2 class="mt-2">Card Title</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedSmallProject.cardTitle" name="cardTitle">
+                                    [(ngModel)]="selectedSmallProject.cardTitle" name="cardTitle" #cardTitle="ngModel">
+                                <div *ngIf="cardTitle.invalid && (cardTitle.dirty || cardTitle.touched)"
+                                    class="invalid-feedback">
+                                    Card title is required.
+                                </div>
                             </div>
                             <h2 class="mt-2">Project Name</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedSmallProject.projectName" name="projectName">
+                                    [(ngModel)]="selectedSmallProject.projectName" name="projectName"
+                                    #projectName="ngModel">
+                                <div *ngIf="projectName.invalid && (projectName.dirty || projectName.touched)"
+                                    class="invalid-feedback">
+                                    Project name is required.
+                                </div>
                             </div>
                             <h2 class="mt-2">Project Description</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedSmallProject.description" name="description">
+                                    [(ngModel)]="selectedSmallProject.description" name="description"
+                                    #description="ngModel">
+                                <div *ngIf="description.invalid && (description.dirty || description.touched)"
+                                    class="invalid-feedback">
+                                    Project description is required.
+                                </div>
                             </div>
                             <h2 class="mt-2">Github Link</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0"
-                                    [(ngModel)]="selectedSmallProject.githubLink" name="githubLink">
+                                    [(ngModel)]="selectedSmallProject.githubLink" name="githubLink"
+                                    #githubLink="ngModel">
                             </div>
                             <div class="d-flex justify-content-center button-field button-field-card">
-                                <button class="btn btn-success m-3" type="button"
-                                    (click)="addSmallProject()">Add</button>
-                                <button class="btn btn-warning m-3" type="button"
-                                    (click)="updateSmallProject()">Update</button>
-                                <button class="btn btn-danger m-3" type="button"
-                                    (click)="deleteSmallProject()">Delete</button>
+                                <button class="btn btn-success m-3" type="button" (click)="addSmallProject()"
+                                    [disabled]="smallProjectForm.invalid">Add</button>
+                                <button class="btn btn-warning m-3" type="button" (click)="updateSmallProject()"
+                                    [disabled]="smallProjectForm.invalid">Update</button>
+                                <button class="btn btn-danger m-3" type="button" (click)="deleteSmallProject()"
+                                    [disabled]="smallProjectForm.invalid">Delete</button>
                             </div>
                         </form>
                     </div>
                 </div>
+
                 <hr style="color: aliceblue;" class="m-5">
                 <div class="m-5">
                     <div class="mt-5 justify-content-center d-flex">
@@ -173,26 +206,36 @@
                         </div>
                     </div>
                     <div class="mt-5 d-block complate-apps">
-                        <form class="d-block" (ngSubmit)="submitSkillForm()">
+                        <form #skillForm="ngForm" class="d-block">
                             <h2 class="mt-2">Skills Title</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedSkill.title" name="title">
+                                    [(ngModel)]="selectedSkill.title" name="title" #title="ngModel">
+                                <div *ngIf="title.invalid && (title.dirty || title.touched)" class="invalid-feedback">
+                                    Skills title is required.
+                                </div>
                             </div>
                             <h2 class="mt-2">Skills Description</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedSkill.description" name="description">
+                                    [(ngModel)]="selectedSkill.description" name="description" #description="ngModel">
+                                <div *ngIf="description.invalid && (description.dirty || description.touched)"
+                                    class="invalid-feedback">
+                                    Skills description is required.
+                                </div>
                             </div>
                             <div class="d-flex justify-content-center button-field button-field-card">
-                                <button class="btn btn-success m-3" type="button" (click)="addSkill()">Add</button>
-                                <button class="btn btn-warning m-3" type="button"
-                                    (click)="updateSkill()">Update</button>
-                                <button class="btn btn-danger m-3" type="button" (click)="deleteSkill()">Delete</button>
+                                <button class="btn btn-success m-3" type="button" (click)="addSkill()"
+                                    [disabled]="skillForm.invalid">Add</button>
+                                <button class="btn btn-warning m-3" type="button" (click)="updateSkill()"
+                                    [disabled]="skillForm.invalid">Update</button>
+                                <button class="btn btn-danger m-3" type="button" (click)="deleteSkill()"
+                                    [disabled]="skillForm.invalid">Delete</button>
                             </div>
                         </form>
                     </div>
                 </div>
+
                 <hr style="color: aliceblue;" class="m-5">
                 <div class="m-5">
                     <div class="mt-5 justify-content-center d-flex">
@@ -214,20 +257,27 @@
                         </div>
                     </div>
                     <div class="mt-5 d-block complete-apps">
-                        <form class="d-block">
+                        <form #funFactForm="ngForm" class="d-block">
                             <h2 class="mt-2">Fun Fact</h2>
                             <div class="form-floating">
                                 <input type="text" class="form-control pt-0 pb-0" required
-                                    [(ngModel)]="selectedFact.title" name="title">
+                                    [(ngModel)]="selectedFact.title" name="title" #title="ngModel">
+                                <div *ngIf="title.invalid && (title.dirty || title.touched)" class="invalid-feedback">
+                                    Fun fact title is required.
+                                </div>
                             </div>
                             <div class="d-flex justify-content-center button-field button-field-card">
-                                <button class="btn btn-success m-3" type="button" (click)="addFact()">Add</button>
-                                <button class="btn btn-warning m-3" type="button" (click)="updateFact()">Update</button>
-                                <button class="btn btn-danger m-3" type="button" (click)="deleteFact()">Delete</button>
+                                <button class="btn btn-success m-3" type="button" (click)="addFact()"
+                                    [disabled]="funFactForm.invalid">Add</button>
+                                <button class="btn btn-warning m-3" type="button" (click)="updateFact()"
+                                    [disabled]="funFactForm.invalid">Update</button>
+                                <button class="btn btn-danger m-3" type="button" (click)="deleteFact()"
+                                    [disabled]="funFactForm.invalid">Delete</button>
                             </div>
                         </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

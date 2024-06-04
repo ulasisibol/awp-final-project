@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
-const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 app.use(express.json());
@@ -11,15 +9,7 @@ app.use(cors());
 
 const uri = "mongodb+srv://ulasisbl:ajJLII9hCaQjnX70@portfolio-app.o0vuf8i.mongodb.net/?retryWrites=true&w=majority&appName=portfolio-app";
 
-const userSchema = new mongoose.Schema({
-    username: String,
-    password: String
-});
-
-const User = mongoose.model('User', userSchema);
 const Admin = require('./models/admin');
-const Project = require('./models/project');
-
 
 
 mongoose.set("strictQuery", false);
@@ -53,7 +43,6 @@ app.get('/api/title', async (req, res) => {
     }
 });
 
-// currentlyWork
 
 app.get('/api/newWork', async (req, res) => {
     try {
@@ -77,7 +66,7 @@ app.post('/api/updateNewWork', async (req, res) => {
 
 const hardcodedUser = {
     username: "admin",
-    password: "admin" // Gerçek uygulamalarda daha güçlü bir şifre kullanılmalı
+    password: "admin"
 };
 
 app.post('/api/login', (req, res) => {
@@ -92,12 +81,14 @@ app.post('/api/login', (req, res) => {
     }
 });
 
+// ROUTES
 
-const projectRoutes = require('./routes/project');  // Projeler için router'ı dahil edin
-app.use('/api', projectRoutes);  // Endpoint'leri /api altında kullan
 
-const smallProjectRoutes = require('./routes/small.project'); // SmallProject routes dosyanızın yolu
-app.use('/api', smallProjectRoutes);  // Endpoint'leri /api altında kullan
+const projectRoutes = require('./routes/project');
+app.use('/api', projectRoutes);
+
+const smallProjectRoutes = require('./routes/small.project');
+app.use('/api', smallProjectRoutes);
 
 const SkillRouter = require('./routes/skill');
 app.use('/api/skills', SkillRouter);

@@ -12,6 +12,7 @@ import { FunFactService } from './project/fun.facts.service';
 import { FunFact } from './project/fun.facts.model';
 import { AuthService } from '../auth/auth.service';
 import { AuthGuard } from '../auth/auth.guard';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -32,7 +33,6 @@ export class AdminComponent implements OnInit {
   selectedSmallProject: SmallProject = new SmallProject();
   skills: Skill[] = [];
   selectedSkill: Skill = new Skill();
-
   funFacts: FunFact[] = [];
   selectedFact: FunFact = new FunFact();
 
@@ -42,7 +42,8 @@ export class AdminComponent implements OnInit {
     private smallProjectService: SmallProjectService,
     private skillService: SkillService,
     private funFactService: FunFactService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getTitle();

@@ -54,7 +54,7 @@ section {
 
     .about-me-img {
         .about-me-image {
-            max-width: 15rem !important;
+            max-width: 20rem !important;
         }
     }
 }
@@ -82,6 +82,7 @@ section {
 
     .card-title {
         color: rgb(245, 245, 245) !important;
+        font-weight: 350;
     }
 
     .skills-text {
@@ -112,7 +113,7 @@ section {
     height: auto;
     margin: 10px;
     border-radius: 0;
-    background-color: #282C33;
+    background-color: #070708;
 
     .card-body {
         padding: 0 !important;

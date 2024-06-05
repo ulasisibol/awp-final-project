@@ -10,6 +10,10 @@
     color: #ABB2BF !important;
 }
 
+h6 {
+    font-weight: 300 !important;
+}
+
 section {
     margin-top: 4%;
     margin-bottom: 2%;
@@ -29,6 +33,8 @@ section {
         p {
             font-size: medium;
         }
+
+
     }
 
     .complate-apps {
@@ -51,7 +57,7 @@ section {
                 margin-top: 20px;
                 width: 18rem;
                 border-radius: 0;
-                background-color: #282C33;
+                background-color: #070708;
 
                 .card-img-top {
                     border: 0.5px solid gray;
@@ -101,7 +107,8 @@ section {
                         max-height: 30px;
                         min-width: 120px;
                         margin: 5px;
-                        background-color: #282C33;
+                        background-color: #070708;
+                        border-radius: 0;
                     }
                 }
             }

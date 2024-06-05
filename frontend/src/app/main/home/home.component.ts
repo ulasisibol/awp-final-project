@@ -72,9 +72,9 @@ export class HomeComponent implements OnInit {
     let recentCount = 3;
 
     if (screenWidth < 500) {
-      recentCount = Math.max(1, Math.floor(0.1 * this.projects.length));
+      recentCount = 1;
     } else if (screenWidth < 990) {
-      recentCount = Math.max(1, Math.floor(0.2 * this.projects.length));
+      recentCount = 2;
     } else {
       recentCount = 3;
     }

@@ -335,7 +335,7 @@ section {
 .card {
     margin: 10px;
     border-radius: 0;
-    background-color: #282C33;
+    background-color: #070708;
 
     .card-img-top {
         border: 0.5px solid gray;
@@ -384,7 +384,7 @@ section {
         .btn {
             font-size: small;
             min-width: 120px;
-            background-color: #282C33;
+            background-color: #070708;
             margin: 0.2rem;
 
         }

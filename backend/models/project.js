@@ -1,4 +1,3 @@
-// models/project.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -10,7 +9,7 @@ const projectSchema = new Schema({
     liveLink: { type: String, default: '' },
     githubLink: { type: String, default: '' }
 }, {
-    timestamps: true  // Zaman damgalarını otomatik olarak ekler
+    timestamps: true
 });
 
 module.exports = mongoose.model('Project', projectSchema);

@@ -26,7 +26,7 @@ mongoose.connect(uri)
 
 app.post('/api/updateTitle1', async (req, res) => {
     try {
-        console.log('UpdateTitle1 request body:', req.body); // Log the request body
+        console.log('UpdateTitle1 request body:', req.body);
         const admin = await Admin.findOneAndUpdate({}, { homeTitle1: req.body.title }, { new: true, upsert: true });
         res.json({ message: 'Title updated successfully', admin });
     } catch (err) {
@@ -66,7 +66,7 @@ app.post('/api/updateNewWork', async (req, res) => {
 
 const hardcodedUser = {
     username: "admin",
-    password: "admin"
+    password: "admin123"
 };
 
 app.post('/api/login', (req, res) => {

@@ -15,10 +15,10 @@ const smallProjectSchema = new mongoose.Schema({
     },
     githubLink: {
         type: String,
-        required: false  // Bu alan isteğe bağlı
+        required: false
     }
 }, {
-    timestamps: true  // createdAt ve updatedAt alanları otomatik olarak yönetilir
+    timestamps: true
 });
 
 const SmallProject = mongoose.model('SmallProject', smallProjectSchema);

@@ -1,4 +1,3 @@
-// models/FunFact.js
 const mongoose = require('mongoose');
 
 const funFactSchema = new mongoose.Schema({

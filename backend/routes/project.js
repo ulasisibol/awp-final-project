@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Project = require('../models/project');  // Project modelini içe aktarın
+const Project = require('../models/project');
 
 // Projeleri Listele
 router.get('/projects', async (req, res) => {
